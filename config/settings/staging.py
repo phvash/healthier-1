@@ -1,11 +1,9 @@
 import os
 import sys
-import urlparse
 
 from .base import *
 
-# Register database schemes in URLs.
-urlparse.uses_netloc.append('mysql')
+
 
 try:
 
@@ -16,18 +14,16 @@ try:
         DATABASES = {}
 
     if 'DATABASE_URL' in os.environ:
-        url = urlparse.urlparse(os.environ['DATABASE_URL'])
 
         # Ensure default database exists.
         DATABASES['default'] = DATABASES.get('default', {})
 
         # Update with environment configuration.
         DATABASES['default'].update({
-            'NAME': url.path[1:],
-            'USER': url.username,
-            'PASSWORD': url.password,
-            'HOST': url.hostname,
-            'PORT': url.port,
+            'NAME': os.environ.get('DB_NAME'),
+            'USER': os.environ.get('DB_USERNAME'),
+            'PASSWORD': os.environ.get('DB_PWD'),
+            'HOST': os.environ.get('DB_HOST'),
         })
 
 
