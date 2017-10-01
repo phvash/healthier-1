@@ -375,6 +375,8 @@ gen
 .idea/
 # healthier/consumers/migrations/0002_consumer_user_details_id.py
 # healthier/providers/migrations/0002_provider_user_details_id.py
+healthier/consumers/migrations/*
+healthier/providers/migrations/*
 healthier/static/dash/plugins/RWD-Table-Patterns/
 healthier/static/dash/plugins/bootstrap-datepicker/
 healthier/static/dash/plugins/bootstrap-tagsinput/
