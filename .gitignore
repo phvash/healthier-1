@@ -53,7 +53,7 @@ coverage.xml
 # Django stuff:
 staticfiles/
 migrations/
-*migrations/
+*migrations/*
 
 # Flask stuff:
 instance/
