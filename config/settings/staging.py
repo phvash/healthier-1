@@ -8,6 +8,7 @@ DATABASES['default'] = env.db('CLEARDB_DATABASE_URL')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
@@ -37,7 +38,7 @@ ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['example.com', ])
 
 INSTALLED_APPS += ['gunicorn', ]
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
 
 
 
