@@ -11,9 +11,10 @@ DATABASES['default'] = env.db('CLEARDB_DATABASE_URL')
 # # Static files (CSS, JavaScript, Images)
 # # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATICFILES_DIRS = (
-    os.path.join(APPS_DIR, 'static'),
-)
+STATICFILES_DIRS = [
+    str(APPS_DIR.path('static')),
+]
+
 
 # This ensures that Django will be able to detect a secure connection
 # properly on Heroku.
