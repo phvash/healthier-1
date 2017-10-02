@@ -6,6 +6,8 @@ from .local import *
 
 DATABASES['default'] = env.db('CLEARDB_DATABASE_URL')
 
+DEBUG = env.bool('DJANGO_DEBUG', default=False)
+
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.join(PROJECT_ROOT, '..', '..', 'healthier')
@@ -42,21 +44,6 @@ ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['example.com', ])
 INSTALLED_APPS += ['gunicorn', ]
 
 
-
-# # Static Assets
-# # ------------------------
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-# # COMPRESSOR
-# # ------------------------------------------------------------------------------
-# COMPRESS_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# COMPRESS_URL = STATIC_URL
-# COMPRESS_ENABLED = env.bool('COMPRESS_ENABLED', default=True)
-
-# TEMPLATE CONFIGURATION
-# ------------------------------------------------------------------------------
-# See:
-# https://docs.djangoproject.com/en/dev/ref/templates/api/#django.template.loaders.cached.Loader
 TEMPLATES[0]['OPTIONS']['loaders'] = [
     ('django.template.loaders.cached.Loader', [
         'django.template.loaders.filesystem.Loader', 'django.template.loaders.app_directories.Loader', ]),
