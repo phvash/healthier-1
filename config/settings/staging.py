@@ -43,15 +43,15 @@ INSTALLED_APPS += ['gunicorn', ]
 
 
 
-# Static Assets
-# ------------------------
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# # Static Assets
+# # ------------------------
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# COMPRESSOR
-# ------------------------------------------------------------------------------
-COMPRESS_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-COMPRESS_URL = STATIC_URL
-COMPRESS_ENABLED = env.bool('COMPRESS_ENABLED', default=True)
+# # COMPRESSOR
+# # ------------------------------------------------------------------------------
+# COMPRESS_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# COMPRESS_URL = STATIC_URL
+# COMPRESS_ENABLED = env.bool('COMPRESS_ENABLED', default=True)
 
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
