@@ -64,3 +64,4 @@ django-countries
 django-datetime-widget
 
 django-webpack-loader
+django-messages
