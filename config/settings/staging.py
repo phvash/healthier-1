@@ -6,7 +6,7 @@ from .local import *
 
 DATABASES['default'] = env.db('CLEARDB_DATABASE_URL')
 
-DEBUG = env.bool('DJANGO_DEBUG', default=False)
+DEBUG = env.bool('DJANGO_DEBUG', default=True)
 
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
