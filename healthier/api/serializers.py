@@ -5,13 +5,13 @@ from django_countries.serializers import CountryFieldMixin
 # local
 from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider
-from healthier.service.models import BaseHealthierService
+from healthier.service.models import ServiceGroupCategory, ServiceGroup, HealthierService
 from healthier.user.models import HealthierUser
 
 
 class HealthServiceSerializer(serializers.ModelSerializer):
     class Meta:
-        model = BaseHealthierService
+        model = HealthierService
         fields = (
             'Category',
             'Service',
@@ -46,14 +46,14 @@ class UserSerializer(CountryFieldMixin, serializers.ModelSerializer):
             'has_configured_account'
         )
 
-    
+
     def create(self, validated_data):
         user = super(UserSerializer, self).create(validated_data)
         user.account_type = validated_data['account_type']
         user.email = validated_data['email']
         # Save the default User fields first, so you can get the User instance
         user.save()
-        
+
         healthier_user = HealthierUser.objects.get(email=user.email)
         print(healthier_user.id)
         print(type(healthier_user))
@@ -76,4 +76,33 @@ class ProviderSerializer(serializers.ModelSerializer):
         model = Provider
         fields = (
             'healthier_id',
+        )
+
+
+class ServiceGroupCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ServiceGroupCategory
+        fields = (
+            'category_name',
+            'category_description'
+        )
+
+
+class ServiceGroupSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ServiceGroup
+        fields = (
+            'group_name',
+            'category',
+            'group_description'
+        )
+
+
+class BaseServiceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HealthierService
+        fields = (
+            'group',
+            'service_name',
+            'details'
         )
