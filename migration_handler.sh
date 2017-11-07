@@ -23,7 +23,6 @@ python manage.py makemigrations user
 python manage.py makemigrations consumers
 python manage.py makemigrations providers
 python manage.py makemigrations service
-python manage.py makemigrations messenger
 python manage.py makemigrations sites
 
-python manage.py migrate 
+python manage.py migrate
