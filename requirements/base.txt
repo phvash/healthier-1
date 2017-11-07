@@ -69,3 +69,6 @@ django-webpack-loader
 -e git://github.com/gbozee/django-paystack#egg=django-paystack
 
 django-annoying
+pygments
+huey
+mailqueue

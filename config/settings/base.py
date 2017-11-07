@@ -77,7 +77,6 @@ THIRD_PARTY_APPS = [
     'debug_toolbar',
     'paystack',
     'huey.contrib.djhuey',
-    'mailqueue',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
