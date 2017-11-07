@@ -71,4 +71,3 @@ django-webpack-loader
 django-annoying
 pygments
 huey
-mailqueue
