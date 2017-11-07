@@ -71,3 +71,4 @@ django-webpack-loader
 django-annoying
 pygments
 huey
+django-celery-email
