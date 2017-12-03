@@ -75,4 +75,6 @@ huey
 django-celery-email
 
 django-bulk-update
-
+django-mail-queue
+django-csvimport
+django-bootstrap-pagination

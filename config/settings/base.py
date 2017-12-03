@@ -77,7 +77,11 @@ THIRD_PARTY_APPS = [
     'debug_toolbar',
     'paystack',
     'huey.contrib.djhuey',
+    'mailqueue',
+    'csvimport',
+    'bootstrap_pagination',
 ]
+
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
