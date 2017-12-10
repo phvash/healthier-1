@@ -122,8 +122,10 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Ailment</th>
-                                                <th>Description</th>
+                                                <th>Name</th>
+                                                <th>Dosage</th>
+                                                <th>Duration</th>
+                                                <th>Refill</th>
                                                 <th>Drug</th>
                                             </tr>
                                         </thead>
@@ -132,8 +134,9 @@
                                             <tr>
                                                 <th scope="row">{{ data.id }}</th>
                                                 <td>{{ data.ailment_name }}</td>
-                                                <td>{{ data.ailment_description }}</td>
-                                                <td>{{ data.ailment_medication }}</td>
+                                                <td>{{ data.ailment_duration }}</td>
+                                                <td>{{ data.ailment_refill }}</td>
+                                                <td>{{ data.ailment_drug }}</td>
                                             </tr>
                                         {% endfor %}
                                         </tbody>
